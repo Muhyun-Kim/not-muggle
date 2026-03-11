@@ -9,9 +9,5 @@ const decrement = () => {
 </script>
 
 <template>
-  <div>
-    <p>{{ count }}</p>
-    <button @click="increment">+</button>
-    <button @click="decrement">-</button>
-  </div>
+  <div></div>
 </template>
