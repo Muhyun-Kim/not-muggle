@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppNavbar />
-    <main>
+    <main class="p-4">
       <slot />
     </main>
   </div>

@@ -1,13 +1,7 @@
-<script setup lang="ts">
-const count = ref(0);
-const increment = () => {
-  count.value++;
-};
-const decrement = () => {
-  count.value--;
-};
-</script>
+<script setup lang="ts"></script>
 
-<template>
-  <div></div>
+<template class="grid grid-cols-3 gap-4">
+  <div>hello</div>
+  <div>hello</div>
+  <div>hello</div>
 </template>
