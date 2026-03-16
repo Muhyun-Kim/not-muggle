@@ -15,7 +15,7 @@ model Profile {
 
   boards    Board[]
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 }
 
 model Board {

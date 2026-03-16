@@ -1,12 +1,3 @@
-/*
-  Warnings:
-
-  - Added the required column `authorId` to the `Board` table without a default value. This is not possible if the table is not empty.
-
-*/
--- AlterTable
-ALTER TABLE "Board" ADD COLUMN     "authorId" TEXT NOT NULL;
-
 -- CreateTable
 CREATE TABLE "Profile" (
     "id" TEXT NOT NULL,
@@ -17,6 +8,18 @@ CREATE TABLE "Profile" (
     "updatedAt" TIMESTAMP(3) NOT NULL,
 
     CONSTRAINT "Profile_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "Board" (
+    "id" SERIAL NOT NULL,
+    "title" TEXT NOT NULL,
+    "content" TEXT NOT NULL,
+    "authorId" TEXT NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMP(3) NOT NULL,
+
+    CONSTRAINT "Board_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex

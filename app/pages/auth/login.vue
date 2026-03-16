@@ -1,6 +1,20 @@
+<script setup lang="ts">
+const supabase = useSupabaseClient();
+
+const loginWithGoogle = async () => {
+  const redirectTo = `${window.location.origin}/confirm`;
+
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: { redirectTo },
+  });
+
+  if (error) console.error(error);
+};
+</script>
+
 <template>
   <div>
-    <h1>로그인 페이지</h1>
-    <p>이 페이지에는 내비바가 보이지 않습니다.</p>
+    <UButton @click="loginWithGoogle"> Google로 로그인 </UButton>
   </div>
 </template>
