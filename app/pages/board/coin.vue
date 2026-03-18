@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>회원가입 페이지</h1>
+    <h1>동전마술</h1>
   </div>
 </template>
