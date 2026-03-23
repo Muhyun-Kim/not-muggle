@@ -1,3 +1,6 @@
+-- CreateEnum
+CREATE TYPE "Genre" AS ENUM ('CARD', 'COIN');
+
 -- CreateTable
 CREATE TABLE "Profile" (
     "id" TEXT NOT NULL,
@@ -5,7 +8,7 @@ CREATE TABLE "Profile" (
     "avatarUrl" TEXT,
     "role" TEXT NOT NULL DEFAULT 'BEGINNER',
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Profile_pkey" PRIMARY KEY ("id")
 );
@@ -15,9 +18,10 @@ CREATE TABLE "Board" (
     "id" SERIAL NOT NULL,
     "title" TEXT NOT NULL,
     "content" TEXT NOT NULL,
+    "genre" "Genre" NOT NULL,
     "authorId" TEXT NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updatedAt" TIMESTAMP(3) NOT NULL,
+    "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Board_pkey" PRIMARY KEY ("id")
 );

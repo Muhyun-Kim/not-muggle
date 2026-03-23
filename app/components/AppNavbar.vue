@@ -20,7 +20,7 @@ const handleLogout = async () => {
 
     <div class="flex items-center gap-2">
       <UButton to="/board" variant="ghost" color="neutral" label="게시판" />
-      <UDivider orientation="vertical" class="h-4" />
+      <USeparator orientation="vertical" class="h-4" />
       <UButton
         v-if="!user"
         to="/auth/login"

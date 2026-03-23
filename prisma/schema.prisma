@@ -18,14 +18,20 @@ model Profile {
   updatedAt DateTime @default(now()) @updatedAt
 }
 
+enum Genre {
+  CARD
+  COIN
+}
+
 model Board {
   id      Int    @id @default(autoincrement())
   title   String
   content String
+  genre   Genre
 
   authorId String
   author   Profile @relation(fields: [authorId], references: [id])
 
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  updatedAt DateTime @default(now()) @updatedAt
 }

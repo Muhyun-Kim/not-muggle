@@ -74,6 +74,17 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Prisma 스키마 변경 시
+
+`prisma/schema.prisma` 수정 후 아래 순서대로 실행:
+
+```bash
+npx prisma migrate dev --name <migration-name>
+yarn gen:types
+```
+
+ALTER TABLE "Board" <TableName> ROW LEVEL SECURITY;
+
 ## 🛠️ Database Infrastructure (Supabase)
 
 ```bash
